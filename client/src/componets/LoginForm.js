@@ -2,9 +2,27 @@ import React from "react";
 
 export default function LoginFrom(){
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+  }
     return(
       <>
-      <h1>Login Form</h1>
+      <form onSubmit={handleSubmit}>
+      <label>
+      <input 
+        type="email" 
+        name="email" 
+      />
+      </label>
+      <label>Password
+        <input 
+          type="password" 
+          name="password" 
+        />
+        </label>
+        <input type="submit" value="Login" />
+    </form>
       </>
     )
 }

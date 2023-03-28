@@ -8,7 +8,7 @@ import './App.css';
 import LoginFrom from './componets/LoginForm'
 import RegisterForm from './componets/registerForm'
 import NavL from './componets/NavL';
-import {BrowserRouter,Route,Router,Outlet,Linkgit, Routes} from "react-router-dom"
+import {Route,Routes} from "react-router-dom"
 
 function App() {
   return (
