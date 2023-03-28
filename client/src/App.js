@@ -5,12 +5,21 @@ import './App.css';
 //import ParentCom from './componets/memocomponents/ParentCom';
 //import UseReduceFunc from './componets/UseReduceFunc';
 //import Fetchdata from './componets/fetchdata';
-import ApiFetch from './componets/apiFetch';
-import {BrowserRouter,Route,Router,Outlet,Linkgit} from "react-router-dom"
+import LoginFrom from './componets/LoginForm'
+import RegisterForm from './componets/registerForm'
+import NavL from './componets/NavL';
+import {BrowserRouter,Route,Router,Outlet,Linkgit, Routes} from "react-router-dom"
 
 function App() {
   return (
-     <h1></h1>
+   <>
+      <NavL></NavL>
+   <Routes>
+     <Route path="/" element={<LoginFrom/>}></Route>
+     <Route path="/register" element={<RegisterForm/>}></Route>
+   </Routes>
+   
+   </>
   );
 }
 
