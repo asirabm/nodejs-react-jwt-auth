@@ -7,8 +7,6 @@ function RegisterForm(){
  const[user,setUser]=useState({})
  const[result,setResult]=useState('')
 
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post('http://localhost:4000/reg',{user:user})
@@ -38,7 +36,7 @@ function RegisterForm(){
     return(
       <>
       {result}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} method="post">
       <label>
       <input 
         type="email" 
