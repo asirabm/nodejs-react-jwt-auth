@@ -5,13 +5,19 @@ import axios  from 'axios'
 
 function RegisterForm(){
  const[user,setUser]=useState({})
+ const[result,setResult]=useState('')
+
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post('http://localhost:4000/reg',{user:user})
-      .then(res=>console.log(res)).
+      .then(res=>{
+        setResult(res.data)
+        setUser({})
+      }).
        catch(e=>console.log(e))
+       //console.log(result)
   
   }
 
@@ -31,6 +37,7 @@ function RegisterForm(){
 
     return(
       <>
+      {result}
       <form onSubmit={handleSubmit}>
       <label>
       <input 
