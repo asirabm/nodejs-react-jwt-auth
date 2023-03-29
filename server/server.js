@@ -1,7 +1,12 @@
 const express=require('express')
 const app=express()
+const cors = require('cors')
+
+app.use(cors({
+    origin:'*'
+}))
 app.get('/',(req,res)=>{
-    res.json({
+    res.send({
         name:'asir',
         age:31
     })
