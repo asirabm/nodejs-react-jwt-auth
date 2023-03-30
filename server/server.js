@@ -31,7 +31,31 @@ app.post('/reg',async(req,res)=>{
     }
 })
 
-mongoose.connect('mongodb://127.0.0.1:27017/jwt-login').then(()=>console.log('connected db sucessfully')).catch(e=>console.log(e))
+app.post('/login',async(req,res)=>{
+   try{
+   const user=req.body.user
+   const u1=await UserModel.findOne({email:user.email})
+   if(u1 == null){
+    res.send('Cannot find user')
+    }
+    if(user.password===u1.password){
+        res.send('sucess')
+    }
+    else{
+        res.send('Wrong password')
+    }
+
+   }
+   catch(e){
+    console.log(e)
+   }
+})
+
+
+
+const add="mongodb+srv://Asir:ETShOc4jsSMs0zI1@cluster0.h60upyz.mongodb.net/?retryWrites=true&w=majority"
+//const add="" 
+mongoose.connect(add).then(()=>console.log('connected db sucessfully')).catch(e=>console.log(e))
 
 
 
